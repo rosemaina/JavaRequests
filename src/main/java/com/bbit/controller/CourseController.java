@@ -43,11 +43,10 @@ public class CourseController {
 
     }
 
-
-    @DeleteMapping(value = "{id}")
-    public  void deleteCourse(@PathVariable Long id) {
-        courseRepository.deleteById(id);
-    }
+//    @DeleteMapping(value = "courses/{id}")
+//    public  void deleteCourse(@PathVariable Long id) {
+//        courseRepository.deleteById(id);
+//    }
 
 //    @GetMapping(value = "{id}")
 //    private Course findOneById(@PathVariable Long id) {

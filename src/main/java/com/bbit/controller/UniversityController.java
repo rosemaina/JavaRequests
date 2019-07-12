@@ -50,11 +50,13 @@ public class UniversityController {
 //        }
     }
 
+//    CREATE A UNIVERSITY
     @PostMapping
     public University createUniversity(@RequestBody University university) {
         return universityRepository.save(university);
     }
 
+//    DELETE A UNIVERSITY
     @DeleteMapping(value = "{id}")
     public  void deleteUniversity(@PathVariable Long id) {
 
@@ -66,6 +68,7 @@ public class UniversityController {
         universityRepository.delete(university);
     }
 
+//    EDIT UNIVERSITY DETAILS
     @PatchMapping(value = "{id}")
     public University university(@PathVariable Long id, @RequestBody University university) {
 
@@ -76,17 +79,24 @@ public class UniversityController {
         return universityRepository.save(foundUniversity);
     }
 
-    //    Getting a course by university id
+    //    GET ALL COURSES FOR ONE UNIVERSITY
     @GetMapping(value = "{universityId}/courses")
     public List<Course> findCourseByUniversityId(@PathVariable Long universityId){
         return courseRepository.findByUniversityId(universityId);
     }
 
-    @PostMapping(value = "universities/{universityId}/courses")
-    public Course createCourse(@PathVariable Long universityId, @RequestBody Course course) {
-        University uni = findOneById(universityId);
+//    CREATE A COURSE
+    @PostMapping(value = "{id}/courses")
+    public Course createCourse(@PathVariable Long id, @RequestBody Course course) {
+        University uni = findOneById(id);
         course.setUniversity(uni);
         return courseRepository.save(course);
+    }
+
+//    DELETE A COURSE
+    @DeleteMapping(value = "courses/{id}")
+    public  void deleteCourse(@PathVariable Long id) {
+        courseRepository.deleteById(id);
     }
 //    @PatchMapping(value = "{id}")
 //    public Course course(@PathVariable Long id, @RequestBody Course course) {
