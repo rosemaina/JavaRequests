@@ -8,7 +8,6 @@ import com.bbit.repository.UniversityRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "universities")
@@ -93,11 +92,12 @@ public class UniversityController {
         return courseRepository.save(course);
     }
 
-//    DELETE A COURSE
-    @DeleteMapping(value = "courses/{id}")
-    public  void deleteCourse(@PathVariable Long id) {
+    //    DELETE A COURSE
+    @DeleteMapping(value = "{universityId}/courses/{id}")
+    public void deleteCourse(@PathVariable Long id) {
         courseRepository.deleteById(id);
     }
+
 //    @PatchMapping(value = "{id}")
 //    public Course course(@PathVariable Long id, @RequestBody Course course) {
 //
