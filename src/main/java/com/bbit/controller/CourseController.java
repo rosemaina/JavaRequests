@@ -43,6 +43,16 @@ public class CourseController {
 
     }
 
+//    @PatchMapping(value = "{universityId}/courses/{id}")
+//    public Course course(@PathVariable Long id, @PathVariable Long universityId, @RequestBody Course course) {
+//
+//        Course foundCourse = findCourseByUniversityId(id);
+//        foundCourse.setCourseName(course.getCourseName());
+//        foundCourse.setCourseDesciption(course.getCourseDesciption());
+//
+//        return courseRepository.save(foundCourse);
+//    }
+
 //    @GetMapping(value = "{id}")
 //    private Course findOneById(@PathVariable Long id) {
 //        Course course = courseRepository.findById(id).orElseThrow(

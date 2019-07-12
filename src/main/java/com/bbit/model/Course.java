@@ -69,7 +69,7 @@ public class Course {
         this.courseDesciption = courseDesciption;
     }
 
-    public University getUniversity() {
+    public University getUniversity(Long universityId) {
         return university;
     }
 

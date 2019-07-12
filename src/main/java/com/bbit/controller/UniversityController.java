@@ -98,14 +98,14 @@ public class UniversityController {
         courseRepository.deleteById(id);
     }
 
-//    @PatchMapping(value = "{id}")
-//    public Course course(@PathVariable Long id, @RequestBody Course course) {
+//    @PatchMapping(value = "{universityId}/courses/{id}")
+//    public Course course(@PathVariable Long id, @PathVariable Long universityId, @RequestBody Course course) {
 //
-//        Course foundCourse = findOneById(id);
-//        foundUniversity.setName(university.getName());
-//        foundUniversity.setLocation(university.getLocation());
+//        Course foundCourse = findCourseByUniversityId(id);
+//        foundCourse.setCourseName(course.getCourseName());
+//        foundCourse.setCourseDesciption(course.getCourseDesciption());
 //
-//        return universityRepository.save(foundUniversity);
+//        return courseRepository.save(foundCourse);
 //    }
 }
 
